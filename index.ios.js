@@ -44,18 +44,13 @@ var styles = {
 class GithubViewer extends Component {
   render() {
     return (
-      <View>
-        <Text>
-        </Text>
-      </View>
+      <NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Github Viewer',
+          component: Home
+        }}/>
     );
-    //   <NavigatorIOS
-    //     style={styles.container}
-    //     initialRoute={{
-    //       title: 'Github Viewer',
-    //       component: Home
-    //     }}/>
-    // );
   }
 }
 

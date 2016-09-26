@@ -7,7 +7,6 @@ export function fetchRepos(username) {
       `${encodeURIComponent(username)}`,
     ]
     return Api.get(`/users/?${params}/repos`).then(resp => {
-      console.log('got here!');
       console.log(resp);
     }).catch( (ex) => {
       console.log(ex);

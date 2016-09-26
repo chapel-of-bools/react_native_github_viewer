@@ -55,11 +55,11 @@ var styles = {
     justifyContent: 'center'
   },
     image: {
-    marginTop: 25,
-    marginBottom: 25,
+    marginTop: 5,
+    marginBottom: 5,
     width: 150,
     height: 150,
-    padding: 10,
+    padding: 2,
     borderWidth: 5,
     borderColor: 'black',
     borderRadius: 75,

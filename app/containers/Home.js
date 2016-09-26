@@ -88,7 +88,6 @@ class Home extends Component {
       <TextInput
         style={styles.textInput}
         placeholder="Enter A Github Username"
-        // onChangeText={(text) => this.setState({text})}
       />
       <TouchableHighlight style={styles.button}
         underlayColor='#99d9f4'

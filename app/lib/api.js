@@ -4,8 +4,6 @@ class Api {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'dataType': 'json',
-      // 'X-Requested-With': 'XMLHttpRequest',
-      // 'X-Auth-Token': '28a2b2f185d0378b1aabb4781a09f546bf1b8b13'
     }
   }
 

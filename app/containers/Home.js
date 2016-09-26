@@ -5,6 +5,7 @@ import {
   NavigatorIOS,
   StyleSheet,
   Text,
+  ScrollView,
   TextInput,
   View,
   TouchableHighlight,
@@ -26,8 +27,9 @@ var styles = {
     color: '#656565'
   },
   container: {
-    padding: 30,
-    marginTop: 150,
+    flex: 1,
+    padding: 10,
+    marginTop: 30,
     alignItems: 'center',
   },
   flowRight: {
@@ -60,7 +62,8 @@ var styles = {
     padding: 10,
     borderWidth: 5,
     borderColor: 'black',
-    borderRadius: 75
+    borderRadius: 75,
+    alignSelf: 'center'
   },
   textInput: {
     textAlign: 'center',
@@ -73,6 +76,13 @@ var styles = {
     alignSelf: 'stretch',
     justifyContent: 'center',
     marginBottom: 20
+  },
+  resultText: {
+    textAlign: 'center',
+    fontSize: 20
+  },
+  scrollSection: {
+    flex: 0.8,
   }
 }
 
@@ -81,8 +91,14 @@ class Home extends Component {
     this.props.fetchRepos('mrscott90')
   }
 
+  repos() {
+    return Object.keys(this.props.searchedRepos).map( key => this.props.searchedRepos[key] )
+  }
+
   render() {
+    console.log(this.repos());
     return <View style={styles.container}>
+      <View>
       <Text style={styles.text}>Search For Repositories!</Text>
       <Image source={require('../../resources/logo.png')} style={styles.image}/>
       <TextInput
@@ -94,6 +110,14 @@ class Home extends Component {
         onPress={ () => this.searchPressed() }>
           <Text style={styles.buttonText}>Search</Text>
       </TouchableHighlight>
+      </View>
+      <ScrollView style={styles.scrollSection}>
+        {this.repos().map((repo) => {
+          return <View key={repo.id}>
+            <Text style={styles.resultText}>{repo.name}</Text>
+          </View>
+        })}
+      </ScrollView>
   </View>
   }
 }

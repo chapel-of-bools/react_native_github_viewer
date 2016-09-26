@@ -33,8 +33,9 @@ class Api {
       if (resp.ok) {
         return json
       }
+
       return json.then(err => {throw err});
-    }).then( json => json.results );
+    });
   }
 }
 

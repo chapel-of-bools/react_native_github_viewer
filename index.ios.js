@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, combineRedduxers, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import reducer from './app/reducers';
+import AppContainer from './app/containers/AppContainer';
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
@@ -23,9 +24,9 @@ const store = configureStore({});
 import {
   AppRegistry,
   NavigatorIOS,
-  StyleSheet,
-  Text,
-  View
+  // StyleSheet,
+  // Text,
+  // View
 } from 'react-native';
 var Home = require('./Home');
 
@@ -41,22 +42,22 @@ var styles = {
   }
 }
 
-class GithubViewer extends Component {
-  render() {
-    return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: 'Github Viewer',
-          component: Home
-        }}/>
-    );
-  }
-}
+// class GithubViewer extends Component {
+//   render() {
+//     return (
+//       <NavigatorIOS
+//         style={styles.container}
+//         initialRoute={{
+//           title: 'Github Viewer',
+//           component: Home
+//         }}/>
+//     );
+//   }
+// }
 
 const App = () => (
   <Provider store={store}>
-    <GithubViewer />
+    <AppContainer />
   </Provider>
 )
 

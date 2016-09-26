@@ -1,0 +1,1 @@
+export const SET_SEARCHED_REPOS = 'SET_SEARCHED_REPOS';

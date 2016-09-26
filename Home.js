@@ -27,7 +27,7 @@ var styles = {
   container: {
     padding: 30,
     marginTop: 150,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   flowRight: {
     flexDirection: 'row',
@@ -86,7 +86,7 @@ class Home extends Component {
         <Image source={require('./resources/logo.png')} style={styles.image}/>
         <TextInput
           style={styles.textInput}
-          placeholder="Enter Github Username"
+          placeholder="Enter A Github Username"
           // onChangeText={(text) => this.setState({text})}
         />
         <TouchableHighlight style={styles.button}

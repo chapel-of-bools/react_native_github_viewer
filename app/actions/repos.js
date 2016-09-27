@@ -6,8 +6,8 @@ export function fetchRepos(username) {
     const params = [
       `${encodeURIComponent(username)}`,
     ]
-    return Api.get(`/users/${params}/repos`).then(resp => {
-      dispatch(setSearchedRepos({ repos: resp }));
+    return Api.get(`/users/${params}/repos`).then(repos => {
+      dispatch(setSearchedRepos({ repos: repos }));
     }).catch( (ex) => {
       console.log(ex);
     })

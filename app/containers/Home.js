@@ -82,13 +82,21 @@ var styles = {
     fontSize: 20
   },
   scrollSection: {
-    flex: 0.8,
+    flex: 0.8
   }
 }
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { searching: false, usernameInput: '' }
+  }
+
   searchPressed() {
-    this.props.fetchRepos('mrscott90')
+    this.setState({searching: true});
+    this.props.fetchRepos(this.state.usernameInput).then( () => {
+      this.setState({searching: false});
+    });
   }
 
   repos() {
@@ -104,6 +112,9 @@ class Home extends Component {
       <TextInput
         style={styles.textInput}
         placeholder="Enter A Github Username"
+        returnKeyType="search"
+        onChangeText={ (usernameInput) => this.setState({usernameInput}) }
+        value={this.state.usernameInput}
       />
       <TouchableHighlight style={styles.button}
         underlayColor='#99d9f4'
@@ -112,11 +123,12 @@ class Home extends Component {
       </TouchableHighlight>
       </View>
       <ScrollView style={styles.scrollSection}>
-        {this.repos().map((repo) => {
+        {!this.state.searching && this.repos().map((repo) => {
           return <View key={repo.id}>
             <Text style={styles.resultText}>{repo.name}</Text>
           </View>
         })}
+        { this.state.searching ? <Text>Searching...</Text> : null }
       </ScrollView>
   </View>
   }

@@ -8,7 +8,6 @@ import ApplicationTabs from './ApplicationTabs'
 class AppContainer extends Component {
   render() {
     return <ApplicationTabs {...this.props} />
-    // return <Home {...this.props} />
   }
 
 }

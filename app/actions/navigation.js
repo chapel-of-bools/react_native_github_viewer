@@ -17,9 +17,17 @@ export function navigate(action) {
   }
 }
 
-function navigateForward(state) {
+export function navigateForward(state) {
   return {
     type: types.NAVIGATION_FORWARD,
     state
+  }
+}
+
+export function navigateBack() {
+  return (dispatch, getState) => {
+    dispatch( {
+      type: types.NAVIGATION_BACK
+    })
   }
 }

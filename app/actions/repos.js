@@ -21,8 +21,8 @@ return {
   }
 }
 
-export function addRepo() {
-  return {
-    type: types.ADD_REPO,
-  }
-}
+// export function addRepo() {
+//   return {
+//     type: types.ADD_REPO,
+//   }
+// }

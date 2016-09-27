@@ -11,11 +11,11 @@ export const searchedRepos = createReducer({}, {
   }
 });
 
-export const repoCount = createReducer(0, {
-  [types.SET_SEARCHED_REPOS](state, action) {
-    return action.repos.length;
-  },
-  [types.ADD_REPO](state, action) {
-    return state + 1;
-  },
-})
+// export const repoCount = createReducer(0, {
+//   [types.SET_SEARCHED_REPOS](state, action) {
+//     return action.repos.length;
+//   },
+//   [types.ADD_REPO](state, action) {
+//     return state + 1;
+//   },
+// })

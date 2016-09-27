@@ -104,7 +104,7 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.repos());
+    // console.log(this.repos());
     return <View style={styles.container}>
       <View>
       <Text style={styles.text}>Search For Repositories!</Text>

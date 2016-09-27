@@ -20,6 +20,12 @@ var styles = {
     fontSize: 20,
     textAlign: 'center'
   },
+  h1: {
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 30,
+    textAlign: 'center'
+  },
   description: {
     marginBottom: 20,
     fontSize: 18,
@@ -79,7 +85,7 @@ var styles = {
   },
   resultText: {
     textAlign: 'center',
-    fontSize: 20
+    fontSize: 25
   },
   scrollSection: {
     flex: 0.8
@@ -104,8 +110,10 @@ class Home extends Component {
   }
 
   render() {
-    // console.log(this.repos());
     return <View style={styles.container}>
+      <View>
+        <Text style={styles.h1}>Github Viewer</Text>
+      </View>
       <View>
       <Text style={styles.text}>Search For Repositories!</Text>
       <Image source={require('../../resources/logo.png')} style={styles.image}/>

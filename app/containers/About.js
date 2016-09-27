@@ -15,6 +15,12 @@ var styles = {
   text: {
     color: 'black',
     backgroundColor: 'white',
+    fontSize: 20,
+    textAlign: 'center'
+  },
+  h1: {
+    color: 'black',
+    backgroundColor: 'white',
     fontSize: 30,
     textAlign: 'center'
   },
@@ -42,7 +48,12 @@ export default class About extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>About</Text>
+      <View>
+        <Text style={styles.h1}>About</Text>
+      </View>
+      <View>
+        <Text style={styles.text}>This app was written by M. Scott using React Native for iOS.</Text>
+      </View>
       </View>
     )
   }

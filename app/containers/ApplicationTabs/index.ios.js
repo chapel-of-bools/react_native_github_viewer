@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {connect } from 'react-redux';
 import { ActionCreators } from '../../actions';
 import Home from '../Home'
+import About from '../About'
 
 class ApplicationTabs extends Component {
 
@@ -21,7 +22,7 @@ class ApplicationTabs extends Component {
     console.log(this.props);
     return <TabBarIOS style={{flex: 1}}>
       <TabBarIOS.Item
-        systemIcon="favorites"
+        systemIcon="search"
         onPress={ () => { return this.onPress(0) } }
         selected={this.props.tabs.index === 0 }
         iconSize={25}>
@@ -32,7 +33,7 @@ class ApplicationTabs extends Component {
         onPress={ () => { return this.onPress(1) } }
         selected={this.props.tabs.index === 1 }
         iconSize={25}>
-        { this.renderScene(Home) }
+        { this.renderScene(About) }
       </TabBarIOS.Item>
     </TabBarIOS>
   }

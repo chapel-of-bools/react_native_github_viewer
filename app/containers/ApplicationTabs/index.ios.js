@@ -19,7 +19,6 @@ class ApplicationTabs extends Component {
   }
 
   render() {
-    console.log(this.props);
     return <TabBarIOS style={{flex: 1}}>
       <TabBarIOS.Item
         systemIcon="search"
